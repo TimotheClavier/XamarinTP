@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:utils="clr-namespace:Xamarin_Module9_TP06.Utils"
+              xmlns:Include="clr-namespace:Xamarin"
+             mc:Ignorable="d"
+             x:Class="Xamarin.TweetsPage">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+        <Include:nav/>
+        <ContentView x:Name="TweetList" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+            <ScrollView HorizontalOptions="FillAndExpand">
+                <ListView x:Name="list" RowHeight="200">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal" Margin="5, 0">
+                                        <StackLayout Orientation="Horizontal" Margin="10">
+                                            <BoxView BackgroundColor="Black" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Username}"/>
+                                                <Label Text="{Binding UserAt}"/>
+                                                <Label Text="{Binding CreatedAt}" HorizontalOptions="EndAndExpand" TextColor="Gray"/>
+                                            </StackLayout>
+                                            <Label Text="{Binding Content}" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Margin="30, 5" VerticalOptions="EndAndExpand">
+                                        <ImageButton HorizontalOptions="StartAndExpand" Source="share.png" WidthRequest="20" BackgroundColor="Transparent"/>
+                                        <ImageButton HorizontalOptions="CenterAndExpand" Source="rt.png" WidthRequest="20" BackgroundColor="Transparent"/>
+                                        <ImageButton HorizontalOptions="EndAndExpand" Source="fav.png" WidthRequest="20" BackgroundColor="Transparent"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </ContentView>
+        <Include:bottom/>
+
+    </Grid>
+
+
+    </ContentPage>

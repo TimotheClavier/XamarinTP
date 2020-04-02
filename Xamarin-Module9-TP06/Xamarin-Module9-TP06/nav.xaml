@@ -1,0 +1,16 @@
+﻿
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xamarin.nav">
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal" BackgroundColor="#58B0F0" Padding="10, 25">
+            <ImageButton HorizontalOptions="StartAndExpand" Source="pencil.png" WidthRequest="35" BackgroundColor="Transparent"/>
+            <Label Text="Accueil" HorizontalOptions="CenterAndExpand" TextColor="white"/>
+            <ImageButton HorizontalOptions="EndAndExpand" Source="search.png" WidthRequest="35" BackgroundColor="Transparent"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
